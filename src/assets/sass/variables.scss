@@ -1,0 +1,49 @@
+$font-stack: 'Roboto', sans-serif;
+$body-bg: #fafcfe;
+$primary-color: #8a8b8e;
+$itembg-color: #f4f6f8;
+$item-box-bg: #fff;
+$inprogres-bg: #d4defb;
+$inprogres-color: #677496;
+$checkbox-bg: #fafcfe;
+$checkbox-color: #1dbf74;
+$progrssbar: #1dbf74;
+$active: #f766ac;
+
+
+@mixin header{
+    color: $primary-color;
+    font:700 16px/20px $font-stack;
+    text-align: left;
+    margin: 10px 0;
+    text-transform: uppercase;
+  }
+
+  @mixin delete{
+    font-size: .88rem;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+    z-index: 6;
+    position: relative;
+    color: #212529;
+    padding: .5rem 1rem;
+    -moz-transition: all 0.5s ease-in-out; -o-transition: all 0.5s ease-in-out;  -webkit-transition: all 0.5s ease-in-out; -ms-transition: all 0.5s ease-in-out;  transition: all 0.5s ease-in-out;
+  }
+  
+  
+  @mixin productaction {
+    background: $inprogres-bg;
+    color: $inprogres-color;
+    font:600 10px/10px $font-stack;
+    padding: 4px 14px;
+    border-radius: 10px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  @mixin productatime {
+    color: $primary-color;
+    font:400 12px/15px $font-stack;
+    padding-top: 8px;
+  }

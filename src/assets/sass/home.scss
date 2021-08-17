@@ -1,0 +1,149 @@
+// veriable
+@import "variables";
+
+
+
+// veriable
+// font-family: 'Roboto', sans-serif;
+
+/*=.=.=.=.=---STYLE FOR---=.=.=.=.=*/
+body{ font:normal 14px/18px $font-stack; color: $primary-color; padding: 0; margin: 0;background: $body-bg;}
+h1, h2, h3, h4, h5, h6, p, span, strong{ margin: 0px; padding: 0px;}
+ul{ margin: 0px; padding: 0px;}
+ul li{ margin: 0px; padding: 0px; list-style: none;}
+a{ display: inline-block; margin: 0px; padding: 0px; text-decoration: none; outline: none;}
+a:focus{ outline: none; text-decoration: none; }
+a:active{ outline: none; text-decoration: none; }
+a:hover{ outline: none; text-decoration: none; }
+img{outline: none; text-decoration: none;}
+
+
+input[type="text"]::-webkit-input-placeholder { opacity: 1; }
+input[type="text"]::-moz-input-placeholder { opacity: 1; }
+input[type="search"]::-webkit-input-placeholder { opacity: 1; }
+input[type="search"]::-moz-input-placeholder { opacity: 1; }
+input[type="email"]::-webkit-input-placeholder { opacity: 1; }
+input[type="email"]::-moz-input-placeholder { opacity: 1; }
+input[type="tel"]::-webkit-input-placeholder { opacity: 1; }
+input[type="tel"]::-moz-input-placeholder { opacity: 1; }
+textarea::-moz-input-placeholder { opacity: 1; }
+textarea::-webkit-input-placeholder { opacity: 1; }
+
+input{outline: none !important;}
+textarea{outline: none !important;}
+
+
+/* Getting the new tags to behave */
+article, aside, audio, 
+canvas, command, 
+datalist, details, 
+embed, 
+figcaption, figure, footer, 
+header, hgroup, 
+keygen, 
+meter, 
+nav, 
+output, 
+progress, 
+section, source, 
+video {
+	display:block;
+}
+mark, 
+rp, rt, ruby, 
+summary, 
+time {
+	display:inline;
+}
+
+
+*,
+*:before,
+*:after {-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;}
+/*=.=.=.=.=---STYLE FOR---=.=.=.=.=*/
+
+.row {display: -webkit-box;display: -ms-flexbox;display: flex;-ms-flex-wrap: wrap;flex-wrap: wrap;gap: 10px;justify-content: space-around;}
+.container{ width: 1200px; margin: 0px auto; padding: 0 15px;max-width: 100%;}
+.item-4 {-webkit-box-flex: 0;-ms-flex: 0 0 24%;flex: 0 0 24%;max-width: 24%;width: 100%;min-height: 1px;min-width: 240px;}
+.media {display: -webkit-box;display: -ms-flexbox;display: flex;-webkit-box-align: start;-ms-flex-align: start;align-items: flex-start;width: 100%;float: left;}
+.media-body {-webkit-box-flex: 1;-ms-flex: 1;flex: 1;}
+
+.home_body{width: 100%;float: left;padding: 30px 0;
+  .item_wrap{background: $itembg-color;width: 100%;height: 100%;padding: 10px 15px;border-radius: 4px;float: left;
+    .header h4{@include header;}
+    .item_box{width: 100%;padding: 0px;background: $item-box-bg;border-radius: 5px;float: left;margin-top: 10px;box-shadow: 0px 0px px 0px rgba(0,0,0,0.10);
+      -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.10);
+      -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.10);
+      .item_body{padding: 10px 10px 20px;width: 100%;float: left;
+        .del_toggle{width: 100%;float: left;text-align: right;position: relative;
+          .delet_btn.active{display: block;}
+          .delet_btn{position: absolute;top: 16px;right: 0;width: 120px;text-align: center;background: #fff;float: right;border-radius: 4px;display: none;padding: 5px 0;
+            box-shadow: 0px 0px px 0px rgba(0,0,0,0.10);
+            -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.10);
+            -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.10);
+            a{@include delete;
+              &:hover{background: #f1f1f1;}
+              img{width: 14px;height: 14px;position: relative;margin-right: 4px;top: -1px;}
+            }
+          }
+          .toggle_img{width: 16px;float: right;height: 14px;cursor: pointer;
+            img{width: 100%;}
+          }
+        }
+        .media{padding: 10px 0 20px;
+          .media_img {max-width: 70px;float: left;height: 70px;overflow: hidden;border-radius: 5px;margin-right: 10px;
+            img{width: 100%;}
+          }
+          .media_content{width: 100%;float: left;text-align: right;
+            .product_action{width: 100%;float: left;
+              span{@include productaction;display: inline-block;}
+            }
+            .product_time{width: 100%;float: left;
+              span{@include productatime;display: inline-block;
+                img{width: 11px;height: 11px;margin-right: 4px;}
+              }
+            }
+            .hour_price{width: 100%;float: left;padding-top: 5px;
+              ul li{display: inline-block;@include productatime;padding: 0 15px;border-right: 1px solid #8a8b8e;
+                &:last-child{padding-right: 0;border-right: none;color: #000;
+                  b{color: #000;}
+                }
+              }
+            }
+          }
+        }
+        .checkbox{width: 100%;float: left;background: $checkbox-bg;border-radius: 5px;padding: 0 10px 10px;text-align: left;
+          label{display: flex;margin-top: 10px;cursor: pointer;
+            span{color: $primary-color;font:400 12px/15px $font-stack;}
+          }
+          label > input[type="checkbox"] {display: none;}
+          label > input[type="checkbox"] + *::before {content: "";display: inline-block;vertical-align: bottom;width: 1rem;height: 1rem;margin-right: 0.4rem;border-radius: 4px;border-style: solid;border-width: 0.1rem;border-color: gray;flex-shrink: 0;}
+          label > input[type="checkbox"]:checked + * {color: $primary-color;font:400 12px/15px $font-stack;}
+          label > input[type="checkbox"]:checked + *::before {content: "✓";color: white;text-align: center;background: $checkbox-color;border-color: $checkbox-color;font-size: 10px;line-height: 1rem;}
+        }
+      }
+      .item_footer{padding: 10px 10px;width: 100%;float: left;border-top: 1px solid #f2f4f6;
+        .footer_content{width: 100%;float:left;display: flex;align-items: center;gap: 0.8rem;justify-content: space-between;}
+        .footer_left{float: left;width: auto;
+          h5{color: $primary-color;font:500 12px/16px $font-stack;text-align: left;}
+        }
+        .footer_right{float: left;width: auto;align-items: center;gap: 0.8rem; display: flex;
+          .progress {padding:0;width:45px;height:7px;overflow:hidden;background:#e5e5e5;border-radius:6px;
+            .bar {position:relative;float:left;min-width:1%;height:100%;background:$progrssbar;}
+          }
+          .chat_box{float: left;width: auto;position: relative;
+            img{width: 18px;height: 18px;}
+            &::after{
+              position: absolute;content: "";width: 8px;height: 8px;top: -2px;right: -2px;background: $active;border-radius: 50%;
+            }
+          }
+          .profile_img{width: 25px;height: 25px;overflow: hidden;border-radius: 50%;
+            img{width: 100%;}
+          }
+        }
+      }
+    }
+  }
+}
+
+
